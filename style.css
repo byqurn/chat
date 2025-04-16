@@ -1,0 +1,183 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  overflow: hidden;
+  color: white;
+}
+
+#chat-container {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100vh;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow-y: hidden;
+}
+
+.chat-message {
+  margin: 5px 0;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  word-wrap: break-word;
+  animation: fadeIn 0.3s ease-in-out;
+  transition: opacity 0.5s ease-out;
+}
+
+.chat-message.fading {
+  opacity: 0;
+}
+
+.username {
+  font-weight: bold;
+  margin-right: 6px;
+}
+
+.badge {
+  display: inline-block;
+  margin-right: 4px;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+.badge-mod {
+  background-color: #00a859;
+}
+
+.badge-sub {
+  background-color: #9147ff;
+}
+
+.badge-vip {
+  background-color: #ff6b00;
+}
+
+.emoji {
+  height: 20px;
+  vertical-align: middle;
+  margin: 0 2px;
+}
+
+.status-indicator {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 12px;
+  z-index: 100;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.status-indicator.connected {
+  background: rgba(0, 150, 0, 0.7);
+  opacity: 0;
+}
+
+.status-indicator.error {
+  background: rgba(200, 0, 0, 0.7);
+}
+
+.settings-panel {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 100;
+}
+
+#settings-toggle {
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#settings-toggle:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#settings-content {
+  position: absolute;
+  bottom: 50px;
+  right: 0;
+  width: 250px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  padding: 15px;
+  transition: all 0.3s ease;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+}
+
+.setting-group {
+  margin-bottom: 12px;
+}
+
+.setting-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.setting-group input {
+  width: 100%;
+  padding: 6px;
+  border-radius: 4px;
+  border: 1px solid #444;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.hint {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-left: 5px;
+}
+
+#save-settings {
+  width: 100%;
+  padding: 8px;
+  background: #00a859;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#save-settings:hover {
+  background: #008c4a;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
